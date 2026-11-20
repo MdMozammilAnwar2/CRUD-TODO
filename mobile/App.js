@@ -4,9 +4,8 @@ import {
   StyleSheet, ActivityIndicator, KeyboardAvoidingView, Platform, StatusBar,
 } from "react-native";
 
-// Phone can't reach "localhost" — use your computer's LAN IP (run `ipconfig`).
-// Android emulator: http://10.0.2.2:5000/api/todos
-const API = "http://192.168.1.12:5000/api/todos";
+// API base URL comes from mobile/.env (EXPO_PUBLIC_API_URL)
+const API = `${process.env.EXPO_PUBLIC_API_URL}/api/todos`;
 
 export default function App() {
   const [todos, setTodos] = useState([]);
